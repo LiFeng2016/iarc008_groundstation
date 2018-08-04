@@ -1,0 +1,8 @@
+INCLUDE_DIRECTORIES(include)
+
+AUX_SOURCE_DIRECTORY(src DIR_EXAMPLE_SRCS)
+ADD_LIBRARY(example_lib STATIC ${DIR_EXAMPLE_SRCS})
+
+ADD_EXECUTABLE(example  example.cpp)
+
+TARGET_LINK_LIBRARIES(example  ${LIBS} example_lib)
